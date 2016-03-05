@@ -33,6 +33,8 @@ defmodule Commander.Mixfile do
     [
       {:cowboy, "~> 1.0"},
       {:credo, "~> 0.3", only: [:dev, :test]},
+      {:earmark, "~> 0.1", only: :dev},
+      {:ex_doc, "~> 0.11", only: :dev},
       {:gettext, "~> 0.9"},
       {:phoenix_ecto, "~> 2.0"},
       {:phoenix_html, "~> 2.4"},
