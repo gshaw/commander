@@ -16,7 +16,7 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li><%= link("About", to: page_path(@conn, :about)) %></li>
           </ul>
         </nav>
         <span class="logo"></span>
@@ -28,6 +28,15 @@
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
+
+      <hr>
+      <footer>
+        &copy; <%= Timex.Date.now.year %> Gerry Shaw
+        &middot;
+        <%= link("Commander", to: page_path(@conn, :index)) %>
+        &middot;
+        <%= link("About", to: page_path(@conn, :about)) %>
+      </footer>
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
