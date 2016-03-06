@@ -2,24 +2,36 @@ defmodule Commander.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :commander,
-     version: "0.0.1",
-     elixir: "~> 1.0",
-     elixirc_paths: elixirc_paths(Mix.env),
-     compilers: [:phoenix, :gettext] ++ Mix.compilers,
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     aliases: aliases,
-     deps: deps]
+    [
+      app: :commander,
+      version: "0.0.1",
+      elixir: "~> 1.0",
+      elixirc_paths: elixirc_paths(Mix.env),
+      compilers: [:phoenix, :gettext] ++ Mix.compilers,
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
+      aliases: aliases,
+      deps: deps
+    ]
   end
 
   # Configuration for the OTP application.
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Commander, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+    [
+      mod: {Commander, []},
+      applications: [
+        :cowboy,
+        :exsentry,
+        :gettext,
+        :logger,
+        :phoenix_ecto,
+        :phoenix_html,
+        :phoenix,
+        :postgrex
+      ]
+    ]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,6 +47,7 @@ defmodule Commander.Mixfile do
       {:credo, "~> 0.3", only: [:dev, :test]},
       {:earmark, "~> 0.1", only: :dev},
       {:ex_doc, "~> 0.11", only: :dev},
+      {:exsentry, "~> 0.2.1"},
       {:gettext, "~> 0.9"},
       {:phoenix_ecto, "~> 2.0"},
       {:phoenix_html, "~> 2.4"},

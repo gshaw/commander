@@ -68,3 +68,6 @@ config :commander, Commander.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
   pool_size: 20
+
+# Configure Sentry exception tracking
+config :exsentry, dsn: System.get_env("SENTRY_DSN")
