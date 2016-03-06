@@ -18,6 +18,8 @@ defmodule Commander.Router do
 
     get "/", PageController, :index
     get "/about", PageController, :about
+
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
