@@ -17,6 +17,7 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <li><%= link("About", to: page_path(@conn, :about)) %></li>
+            <li><%= link("Users", to: user_path(@conn, :index)) %></li>
           </ul>
         </nav>
         <span class="logo"></span>
@@ -31,11 +32,12 @@
 
       <hr>
       <footer>
-        &copy; <%= Timex.Date.now.year %> Gerry Shaw
-        &middot;
-        <%= link("Commander", to: page_path(@conn, :index)) %>
-        &middot;
-        <%= link("About", to: page_path(@conn, :about)) %>
+        <ul class="list list-inline">
+          <li>&copy; <%= Timex.Date.now.year %> Gerry Shaw</li>
+          <li><%= link("Commander", to: page_path(@conn, :index)) %></li>
+          <li><%= link("About", to: page_path(@conn, :about)) %></li>
+          <li><%= link("Users", to: user_path(@conn, :index)) %></li>
+        </ul>
       </footer>
 
     </div> <!-- /container -->
