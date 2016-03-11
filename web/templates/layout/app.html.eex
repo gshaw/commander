@@ -42,5 +42,6 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="https://raw.githubusercontent.com/turbolinks/turbolinks/master/dist/turbolinks.js"></script>
   </body>
 </html>
