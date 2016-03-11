@@ -21,6 +21,13 @@ defmodule Commander.Router do
   scope "/", Commander do
     pipe_through :browser # Use the default browser stack
 
+    scope "/system" do
+      get "/health", SystemController, :health
+      get "/info", SystemController, :info
+      get "/error", SystemController, :error
+      get "/email", SystemController, :email
+    end
+
     get "/", PageController, :index
     get "/about", PageController, :about
 
