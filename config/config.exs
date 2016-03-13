@@ -27,3 +27,6 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+# Configure Sentry exception tracking.  Blank DSN disables Sentry HTTP posting.
+config :exsentry, dsn: System.get_env("SENTRY_DSN") || ""

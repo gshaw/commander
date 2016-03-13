@@ -1,10 +1,6 @@
 defmodule Commander.Router do
   use Commander.Web, :router
-
-  # Only initialize Sentry if required ENV variable available.
-  if System.get_env("SENTRY_DSN") != nil do
-    use ExSentry.Plug
-  end
+  use ExSentry.Plug
 
   pipeline :browser do
     plug :accepts, ["html"]

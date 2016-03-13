@@ -12,7 +12,7 @@ defmodule Commander.SystemController do
 
   # Raise an error to verify that exception tracking system is working.
   def error(_conn, _params) do
-    raise "Test Exception"
+    raise "System Controller Test Exception"
   end
 
   # Return basic system information.
